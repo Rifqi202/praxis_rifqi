@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table  {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100;
+        }
+
+        td {
+            border: 1px solid #dddd;
+            text-align: left;
+            padding: 8px;
+        }
+        input [type= "button"]{
+            border :none;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-container w3-teal">
+        <h1>Selamat Datang Di Praxis Academy</h1>
+        <p></p>
+    </div>
+    <div class="form">
+<form action=""method="post">
+        {% csrf_token %}
+        <label for="fname"></label>
+        <input type="text" id="fname" name="fname">
+        <button type="submit" >Simpan</button>
+</form>
+</div>
+<br>
+<table>
+        <tr>
+    <div class="hasil">
+    {% for i in isi %}
+    <th>
+        <td>{{i.id}}</td>
+        <td>    {{i.nama}}
+        </td>
+    </th>
+        <th>
+            <td> 
+                
+                <button type="button" style="background-color: green; "style="border: none;">
+                    <a href="hapus/{{i.id}}">Delete</a>
+                </button>    
+            </td>
+            <td> 
+                <button type="button" style="background-color: orange;"style="border: none;">
+                    <a href="detail/{{i.id}}">view</a>
+                </button>
+            </td>
+            <td> 
+                <button type="button" style="background-color: red; "style="border: none;">
+                    <a href="edit/{{i.id}}">edit</a>
+                </button>
+            </td>
+        </th>
+        </tr>
+
+    </div>
+
+{% endfor %}
+</table>
+</body>
+</html>
