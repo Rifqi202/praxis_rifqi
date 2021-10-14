@@ -24,7 +24,7 @@ def makanan(request):
          input_harga = request.POST["harga"]
          models.makanan.objects.create(jenis = input_jenis, nama = input_nama, harga = input_harga)
      data = models.makanan.objects.all()
-     return render(request, "makanan/index.html", {
+     return render(request, "index.html", {
          "data": data,
      })
 def hapus(request, id):

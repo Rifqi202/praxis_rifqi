@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,17 +10,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="jumbotron text-center">
-        <h1>Lesehan Yogya</h1>
-        <p>Meskipun teman, ga menerima ngutang!!!</p> 
-      </div>>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <h1 class="navbar-brand" href="#">Warung Barokah Kalo Ga Diutangin</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/makanan">Makanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/minuman">Minuman</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pesanan">Pesanan</a>
+                </li>
+                
+                </ul>
+                
+            </div>
+            </div>
+        </nav>
+    </section>
     <div class="p-5">
         <form action="" method="POST">
             {% csrf_token %}
                 <label>Jenis</label>
                 <select class="form-select" name="jenis">
-                    <option value="Makanan">Makanan</option>
-                    <option value="Minuman">Minuman</option>
+                    <option>Pilih</option>
+                    <option value="Kering">Kering</option>
+                    <option value="Basah">Basah</option>
                 </select>
                 <label>Nama</label>
                 <input type="text" name="nama" class="form-control">
