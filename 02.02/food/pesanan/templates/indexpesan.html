@@ -21,13 +21,13 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/makanan">Makanan</a>
+                    <a class="nav-link" href="/makanan">makanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/minuman">Minuman</a>
+                    <a class="nav-link" href="/minuman">minuman</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pesanan">Pesanan</a>
+                    <a class="nav-link" href="/pesanan">pesanan</a>
                 </li>
                 
                 </ul>
@@ -41,25 +41,22 @@
         <form action="" method="POST">
             {% csrf_token %}
                 <label>Makanan</label>
-                <select class="form-select" name="nama">
+                <select class="form-select" name="makanan">
                     <option selected>Pilih</option>
-                    <option value="Kering">Kering</option>
-                    <option value="Basah">Basah</option>
-                    {% for d in makanan%}
+                    {% for d in dataMakanan%}
                     <option value="{{d.id}}">{{d.nama}}</option>
                     {% endfor %}
                 </select>
                 <label>Jumlah</label>
                 <input type="text" name="jumlah_makanan" class="form-control">
                 <label>Minuman</label>
-                <select class= "form-select" name="nama">
+                <select class= "form-select" name="minuman">
                     <option selected>Pilih</option>
-                    <option value="Panas">Panas</option>
-                    <option value="Dingin">Dingin</option>
-                    {% for d in minuman %}
-                    <option value="{{d.id}}">{{d.id}}</option>
+                    {% for d in dataMinuman %}
+                    <option value="{{d.id}}">{{d.nama}}</option>
                     {% endfor %}
                 </select>
+                <label>Jumlah</label>
                 <input type="text" name="jumlah_minuman" class="form-control"><br>
                 <button type="submit" class="btn btn-primary">Tambah</button>
         </form>

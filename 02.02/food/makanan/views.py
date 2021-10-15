@@ -11,9 +11,9 @@ def index(request):
             nama = request.POST["nama"],
             harga = request.POST["harga"]
             )
-        return redirect('/')
+        return redirect('/makanan/')
     data = models.makanan.objects.all()
-    return render(request, "index.html", {
+    return render(request, "indexmakan.html", {
         "data":data,
     })
 
@@ -24,12 +24,12 @@ def makanan(request):
          input_harga = request.POST["harga"]
          models.makanan.objects.create(jenis = input_jenis, nama = input_nama, harga = input_harga)
      data = models.makanan.objects.all()
-     return render(request, "index.html", {
+     return render(request, "indexmakan.html", {
          "data": data,
      })
 def hapus(request, id):
          models.makanan.objects.filter(id = id).delete()
-         return redirect('/')
+         return redirect('/makanan/')
      
 def edit(request, id):
     if request.POST:
@@ -38,15 +38,15 @@ def edit(request, id):
         models.makanan.objects.filter(id = id).update(nama = input)
         return redirect('/')
     data = models.makanan.objects.filter(id = id).first()
-    return render(request,"edit.html", {
+    return render(request,"editmakan.html", {
         "datailData" : data,
     })
 
 def detail(request, id):
      data = models.makanan.objects.filter(id = id).first()
      print(data)
-     return render(request,"detail.html", {
-         "detail.data" : data,
+     return render(request,"detailmakan.html", {
+         "detailData" : data,
      })
 
     

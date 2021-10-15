@@ -1,3 +1,4 @@
+from django.db import models
 from django.shortcuts import redirect, render
 from . import models
 
@@ -20,7 +21,7 @@ def edit(request, id):
         input = request.POST["nama"]
         print(input)
         models.minuman.objects.filter(id = id).update(nama = input)
-        return redirect('/')
+        return redirect('/minuman/')
     data = models.minuman.objects.filter(id = id).first()
     return render(request,"editminum.html",{
         "detailData" : data,
