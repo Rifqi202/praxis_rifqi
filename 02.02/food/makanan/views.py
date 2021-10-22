@@ -36,7 +36,7 @@ def edit(request, id):
         input = request.POST["nama"]
         print (input)
         models.makanan.objects.filter(id = id).update(nama = input)
-        return redirect('/')
+        return redirect('/makanan/')
     data = models.makanan.objects.filter(id = id).first()
     return render(request,"editmakan.html", {
         "datailData" : data,
